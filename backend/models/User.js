@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
-  mobileNumber: { type: String, required: true, unique: true },
-  ageGroup: { type: String, enum: ["5-17", "18-24", "35+"], required: true },
-});
+    name: String,
+    email: { type: String, unique: true },
+    number: String,
+    password: String
+}, { timestamps: true });
 
-module.exports = mongoose.model("User", UserSchema);
+export default mongoose.model('User', UserSchema);
